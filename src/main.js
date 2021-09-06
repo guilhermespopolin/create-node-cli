@@ -36,9 +36,9 @@ async function installDeps(cwd) {
 
 export default async function createProject({
   template,
-  targetPath,
   initializeGit,
   installDependencies,
+  targetPath,
 }) {
   const tasks = new Listr([
     {
@@ -54,13 +54,17 @@ export default async function createProject({
         try {
           await access(templateDirPath, fs.constants.R_OK);
         } catch (err) {
-          throw new Error("Wasn't able to access template files");
+          const moreDetails = new Error(err).message;
+          throw new Error(
+            `Wasn't able to access template files: ${moreDetails}`
+          );
         }
 
         try {
           await copyTemplateFiles(templateDirPath, targetPath);
         } catch (err) {
-          throw new Error("Wasn't able to copy project files");
+          const moreDetails = new Error(err).message;
+          throw new Error(`Wasn't able to copy project files: ${moreDetails}`);
         }
       },
     },
@@ -70,7 +74,8 @@ export default async function createProject({
         try {
           await initGit(targetPath);
         } catch (err) {
-          throw new Error("Failed to initialize git");
+          const moreDetails = new Error(err).message;
+          throw new Error(`Failed to initialize git: ${moreDetails}`);
         }
       },
       enabled: () => initializeGit,
@@ -81,7 +86,8 @@ export default async function createProject({
         try {
           await installDeps(targetPath);
         } catch (err) {
-          throw new Error("Failed to install dependencies");
+          const moreDetails = new Error(err).message;
+          throw new Error(`Failed to install dependencies: ${moreDetails}`);
         }
       },
       skip: () =>
@@ -100,7 +106,6 @@ export default async function createProject({
 
     process.exit(0);
   } catch (err) {
-    logger.error(err.message);
     process.exit(1);
   }
 }
