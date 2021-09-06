@@ -24,6 +24,7 @@ clignite [-t,--template=[js,ts]] [-g,--git] [-i,--install] [project-name]
 - `-g, --git`: When `true` initializes a git repository in the new project. Defaults
   to `false`.
 - `-i, --install`: When `true` install dependencies. Defaults to `true`.
+- `[project-name]`: Defaults to `node-cli` if not provided.
 
 ## License
 
