@@ -1,22 +1,22 @@
-# @guilhermespopolin/clignite
+# @guilhermespopolin/create-node-cli
 
 Node cli for creating Node cli projects.
 
 ## Installation & Usage
 
 ```bash
-npm init @guilhermespopolin/clignite
+npm init @guilhermespopolin/create-node-cli
 # or
-npx @guilhermespopolin/clignite
+npx @guilhermespopolin/create-node-cli
 # or
-npm install -g @guilhermespopolin/clignite
-clignite
+npm install -g @guilhermespopolin/create-node-cli
+create-node-cli
 ```
 
 ## Options
 
 ```bash
-clignite [-t,--template=[js,ts]] [-g,--git] [-i,--install] <project-name>
+clignite [-t,--template=[js,ts]] [-g,--git] [-i,--install] [project-name]
 ```
 
 - `-t, --template`: Accepts `js` or `ts` for creating node cli projects with
