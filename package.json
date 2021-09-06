@@ -1,0 +1,36 @@
+{
+  "name": "@guilhermespopolin/clignite",
+  "version": "1.0.0",
+  "description": "Boilerplate generator for node cli applications",
+  "main": "src/main.js",
+  "bin": {
+    "@guilhermespopolin/clignite": "src/bin/clignite.js",
+    "clignite": "src/bin/clignite.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guilherme Popolin",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src/",
+    "templates/"
+  ],
+  "keywords": [
+    "bolilerplate",
+    "cli",
+    "node"
+  ],
+  "dependencies": {
+    "chalk": "4.1.2",
+    "esm": "3.2.25",
+    "execa": "^5.1.1",
+    "listr": "^0.14.3",
+    "ncp": "2.0.0",
+    "pkg-install": "^1.0.0",
+    "yargs": "17.1.1"
+  }
+}
