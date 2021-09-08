@@ -7,7 +7,7 @@ Node cli for creating Node cli projects.
 ```bash
 npm init @guilhermespopolin/node-cli
 # or
-npx @guilhermespopolin/create-node-cli
+npx @guilhermespopolin/node-cli
 # or
 npm install -g @guilhermespopolin/create-node-cli
 create-node-cli
